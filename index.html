@@ -28,11 +28,11 @@
 
     <!--Booking Section-->
     <main class="main-content container">
-        <div class="booking-form">
+        <div id="booking-btn" class="booking-form">
             <h3>Booking Flights</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
-                <input class="inp-style" type="text" name="" placeholder="Dhake, Bangladesh">
+                <input class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh">
             </div>
             <div class="input-group">
                 <label for="">Flying To</label>
@@ -51,12 +51,12 @@
             <div class="input-group f-class">
                 <div>
                     <label for="">First Class ($150)</label>
-                    <input id="money-count" class="inp-style inp-width" type="number" value="0">
+                    <input id="money" class="inp-style inp-width" type="number" value="0">
                 </div>
                 
                     <div class="plus-minus-btn">
-                        <button id="increase" class="plus-minus-btn">+</button>
-                        <button id="decrease" class="plus-minus-btn">-</button>
+                        <button onclick="productsHandeler('money' , true )" class="plus-minus-btn">+</button>
+                        <button onclick="productsHandeler('money' , false )" class="plus-minus-btn">-</button>
                     </div>
                 
             </div>
@@ -64,11 +64,11 @@
             <div class="input-group f-class">
                 <div>
                     <label for="">Economy ($100)</label>
-                    <input id="economy-money" class="inp-style inp-width" type="number" name="" value="0">
+                    <input id="economy" class="inp-style inp-width" type="number" name="" value="0">
                 </div>
                 <div class="inside-btn">
-                    <button id="economy-increase" class="plus-minus-btn">+</button>
-                    <button id="economy-decrease"  class="plus-minus-btn">-</button>
+                    <button onclick="productsHandeler('economy' , true )"  class="plus-minus-btn">+</button>
+                    <button onclick="productsHandeler('economy' , false )"  class="plus-minus-btn">-</button>
                 </div>
             </div>
             <div class="calculations">
@@ -86,7 +86,7 @@
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p>$50</p>
+                        <p id="vat">$0</p>
                     </div>
                 </div>
                 <hr>
@@ -95,11 +95,11 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p>$550</p>
+                        <p id="totalCost">$0</p>
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="booking" class="btn-style">Book Now</button>
         </div>
 
         <div class="booking-content">
@@ -111,7 +111,48 @@
     <!--Thank You-->
 
 
-    <script src="fly.js"></script>
+ <!-- Extra page for conformation messege -->
+
+
+ <div id="payment-confermation" class="container">
+	<div class="row">
+		<div class="paymentCont">
+						<div class="headingWrap">
+								<h1 class="headingTop text-center">Select Your Payment Method</h1>	
+								<h3 class="text-center">Which Method Do You Like to Do PayMent</h3>
+						</div>
+						<div class="paymentWrap">
+							<div class="btn-group paymentBtnGroup btn-group-justified" data-toggle="buttons">
+					            <label class="btn paymentMethod active">
+					            	<div class="method visa"></div>
+					                <input type="radio" name="options" checked> 
+					            </label>
+					            <label class="btn paymentMethod">
+					            	<div class="method master-card"></div>
+					                <input type="radio" name="options"> 
+					            </label>
+					            <label class="btn paymentMethod">
+				            		<div class="method amex"></div>
+					                <input type="radio" name="options">
+					            </label>
+					           
+					           
+					         
+					        </div>        
+						</div>
+						<div class="footerNavWrap clearfix">
+							<div class="btn btn-success pull-left btn-fyi"><span class="glyphicon glyphicon-chevron-left"></span> CONTINUE SHOPPING</div>
+							<div class="btn btn-success pull-right btn-fyi">CHECKOUT<span class="glyphicon glyphicon-chevron-right"></span></div>
+						</div>
+					</div>
+		
+	</div>
+</div>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+ <script src="fly.js"></script>
 </body>
 
 </html>
